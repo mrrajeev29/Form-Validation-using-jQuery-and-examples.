@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1 class="Hi">Hello1</h1>
+    <h2 id="Hi">Hello2</h2>
+    <h1 class="Hi2">Hello3</h1>
+    <button type="button"  id="btn">Click</button>
+    <input class="inpu" id="inp" type="text" />
+    <span class="pr">I am Span</span>
+</body>
+</html>
+<script>
+    $(document).ready(function(){
+        $(".Hi").hover(function(){
+            $(this).hide();
+        });
+        $("#Hi").click(function(){
+            $(this).hide();
+        });
+        $(".Hi2").dblclick(function(){
+            $(".Hi2").hide();//  .show (on place of "flex" css property)  // .html (on Place of innerHTML)
+        });
+        $("#btn").click(function(){
+            alert("Button is Clicked");
+        });
+        $(".inpu").mouseup(function(){
+            alert("Mouse is entered");
+        });
+        $("span").click(function(){
+            $(this).html("Hi");
+        });
+
+    });
+</script>
