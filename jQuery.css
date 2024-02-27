@@ -1,0 +1,59 @@
+*{
+    background-color: black;
+
+}
+form,span,h1,p,div,input,select,option,button,label{
+    background-color: white;
+}
+form{
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    height: 31rem;
+    width: 35rem;
+    margin: auto auto;
+    margin-top: 5rem;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 10px 2px whitesmoke;
+}
+span{
+    color: red;
+    text-align:right;
+    display: none;
+}
+div{
+    display: flex;
+}
+#btn{
+    width: 7rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    border-color: red;
+    color: red;
+    margin: auto auto;
+}
+#btn:hover{
+    background-color: red;
+    color: white;
+}
+#name,#age,#num,#drop-down{
+    height: 1.5rem;
+    width: 15rem;
+    margin-left: 5px;
+    text-align: center;
+    border-radius: 3px;
+    border-color: black;
+}
+label{
+    display: inline-block;
+    text-align: right;
+    width: 105px;
+}
+#radio1,#radio2{
+    margin: auto 15px;
+    margin-top: 0.25rem;
+    justify-content:baseline;
+}
+p{
+    margin-top: 0.1rem;
+}

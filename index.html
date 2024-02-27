@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="jQuery.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form  >
+        <h1>Registration Form.</h1>
+        <div>
+            <label>Name : </label><input type="text" placeholder="Enter your name" id="name"/>
+        </div>
+        <span id="name-display">* Name only contain upper case letter.</span>
+        <span id="name-empty">* Name can not be empty.</span>
+        <div>
+            <label>Age : </label><input type="number" placeholder="Enter your age" id="age"/>
+        </div>
+        <span id="age-display">* Age must be greater than 18.</span>
+        <span id="age-empty">* Age can not be empty.</span>
+        <div>
+            <label>phone number : </label><input type="tel" placeholder="Enter your number" id="num"/>
+        </div>
+        <span id="Phone-display">* Phone number must be of length 10.</span>
+        <span id="phone-empty">* Phone number can not be empty.</span>
+        <div id="gender">
+            <label>Gender : </label>
+            <input type="radio" value="0" id="radio1" name="abc"/><p>Male</p>
+            <input type="radio" value="1"  id="radio1" name="abc"/><p>Female</p>
+        </div>
+        <span id="gender-empty">* Select the gender.</span>
+        <div class="role">
+            <label>You are a :</label>
+            <select id="drop-down">
+                <option value="0" selected>--Select--</option>
+                <option value="1">Internship</option>
+                <option value="2">Full Time</option>
+                <option value="3">Part Time</option>
+                <option value="4">Freelance</option>
+            </select>
+        </div>
+        <span id="role-empty">* Select the role.</span>
+        <button type="submit" id="btn">Submit</button>
+    </form>
+
+
+
+
+<script>
+    var gender;
+
+$(document).ready(function()
+{
+    $('#gender input[type="radio"]').click(function(){
+            gender=$(this).val();
+    });
+    $("#btn").click(function (){
+        let name=$("#name").val();
+        let age=$("#age").val();
+        let num=$("#num").val();
+        let role=$("#drop-down").val();
+        if(name.match("^[A-Z]+[ ]?[A-Z]*$"))
+        {
+            $("#name-empty").hide();
+            $("#name-display").hide();
+        }
+        else if (name.length==0)
+        {
+            $("#name-empty").show();
+            $("#name-display").hide();
+            return false;
+        }
+        else
+        {
+            $("#name-display").show();
+            $("#name-empty").hide();
+            return false;
+        }
+        if( age.length==0)
+        {
+            $("#age-empty").show();
+            $("#age-display").hide();
+            return false;
+        }
+        else if(age<=18)
+        {
+            $("#age-display").show();
+            $("#age-empty").hide();
+            return false;
+        }
+        else
+        {
+            $("#age-display").hide();
+            $("#age-empty").hide();
+        }
+        if(num.length==0)
+        {
+            $("#Phone-display").hide();
+            $("#phone-empty").show();
+            return false;
+        }
+        else if(num.length!=10)
+        {
+            $("#Phone-display").show();
+            $("#phone-empty").hide();
+            return false;
+        }
+        else{
+            $("#phone-empty").hide();
+            $("#Phone-display").hide();
+        }
+        if(gender==0 || gender==1)
+        {
+            $("#gender-empty").hide();
+        }
+        else
+        {
+            $("#gender-empty").show();
+            return false;
+        }
+        if(role==0)
+        {
+            $("#role-empty").show();
+            return false;
+        }
+        else
+        {
+            $("#role-empty").hide();
+        }
+        alert("Registration Successful.")
+        return true;
+    });
+});
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
